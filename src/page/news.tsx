@@ -1,6 +1,7 @@
 import { FaAngleRight } from "react-icons/fa";
 import Blog from "../components/ui/blog";
 import { SecondaryButton } from "../components/ui/button";
+import SubHeading from "../components/ui/sub-heading";
 
 export default function News() {
   const TopNav = [
@@ -27,12 +28,11 @@ export default function News() {
       <div className="space-y-20">
         <div className="container mx-auto px-4 space-y-10">
           <div>
-            <h1 className="text-[#222222] text-[25px] md:text-[40px] font-semibold">
-              All Blog
-            </h1>
-            <p className="text-base text-[#222222] font-medium">
-              Explore by Categories
-            </p>
+            <SubHeading
+              title="All Blog"
+              description="Explore by Categories"
+              hascolor={false}
+            />
           </div>
 
           <div

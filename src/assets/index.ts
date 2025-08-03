@@ -20,6 +20,8 @@ import event2 from "./images/event2.png";
 import event3 from "./images/event3.png";
 import event4 from "./images/event4.png";
 import coloredLogo from "./images/pulsepro.png";
+import vector from "./images/Vector.png";
+import ContactImage from "./images/contact-image.png";
 
 export {
   background,
@@ -31,7 +33,9 @@ export {
   slider3,
   slider4,
   about,
+  vector,
   gallery1,
+  ContactImage,
   gallery2,
   gallery3,
   gallery4,

@@ -62,6 +62,10 @@ export default function Navigation({
   };
 
   useEffect(() => {
+    setShow(false);
+  }, [pathname]);
+
+  useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
       setIsTablet(window.innerWidth <= 1200);
@@ -81,7 +85,7 @@ export default function Navigation({
     return (
       <div>
         <div
-          className={`flex justify-between items-center mx-5 ${
+          className={`flex justify-between items-center ${isHome && "mx-5"} ${
             isMobile && "py-2"
           } ${isTablet && "pt-3"}`}
         >
