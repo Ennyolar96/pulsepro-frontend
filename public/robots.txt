@@ -1,0 +1,12 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Disallow: /me/
+
+# Allow indexing of the rest of the site
+Allow: /
+
+
+# Sitemap location
+Sitemap: https://pulsepronigeria.com/sitemap.xml

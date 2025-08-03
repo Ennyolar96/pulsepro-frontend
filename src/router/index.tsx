@@ -9,6 +9,7 @@ import Training from "../page/training";
 import AboutUs from "../page/about-us";
 import ContactUs from "../page/contact-us";
 import Career from "../page/career";
+import NotFound from "../page/notfound";
 
 export default function ApplicationRoute() {
   return (
@@ -23,6 +24,7 @@ export default function ApplicationRoute() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/career" element={<Career />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
