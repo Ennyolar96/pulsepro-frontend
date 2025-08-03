@@ -6,6 +6,9 @@ import RootLayout from "../layout/root-layout";
 import News from "../page/news";
 import SingleBlog from "../page/single-blog";
 import Training from "../page/training";
+import AboutUs from "../page/about-us";
+import ContactUs from "../page/contact-us";
+import Career from "../page/career";
 
 export default function ApplicationRoute() {
   return (
@@ -17,6 +20,9 @@ export default function ApplicationRoute() {
         <Route path="/news" element={<News />} />
         <Route path="/new/:slug" element={<SingleBlog />} />
         <Route path="/training" element={<Training />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/career" element={<Career />} />
       </Route>
     </Routes>
   );

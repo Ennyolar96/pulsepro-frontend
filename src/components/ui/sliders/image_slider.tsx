@@ -35,8 +35,8 @@ const ImageSlider = () => {
   // Get visible count based on screen size
   const getVisibleCount = () => {
     if (typeof window !== "undefined") {
-      if (window.innerWidth < 768) return 2; // Mobile
-      if (window.innerWidth < 1024) return 2; // Tablet
+      if (window.innerWidth <= 768) return 2; // Mobile
+      if (window.innerWidth <= 1024) return 2; // Tablet
     }
     return 4; // Desktop
   };

@@ -64,7 +64,7 @@ export default function Home() {
         className="bg-blend-multiply bg-contain md:bg-cover bg-no-repeat w-full "
       >
         <div className="container mx-auto">
-          <Navigation />
+          <Navigation isHome={true} pathname="/home" />
           <div className="flex flex-col text-center justify-center space-y-5 p-10 w-full h-full items-center">
             <h1 className="font-black text-[30px] md:text-[50px] lg:text-[80px] text-white">
               Empowering <br />{" "}
