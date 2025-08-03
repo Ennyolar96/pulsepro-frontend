@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: inter-SemiBold;
+  font-display: swap;
+  src: url("./assets/font/Inter-SemiBold.otf") format("otf");
+}
+
+@font-face {
+  font-family: inter-ExtraBold;
+  font-display: swap;
+  src: url("./assets/font/Inter-ExtraBold.otf") format("otf");
+}
+
+@font-face {
+  font-family: inter-Black;
+  font-display: swap;
+  src: url("./assets/font/Inter-Black.otf") format("otf");
+}
