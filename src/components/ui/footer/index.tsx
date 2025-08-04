@@ -44,7 +44,7 @@ export default function Footer() {
 
           <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-10">
             <div>
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="PulsePro Nigeria" loading="lazy" />
             </div>
             <div className="gap-5 md:gap-12 flex flex-col md:flex-row">
               {NavLinks.map(({ name, link }, idx) => (

@@ -1,30 +1,30 @@
-import React, { useState } from "react";
+import { courseAcls, courseBls, coursePals, gallery_2 } from "@/assets";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { slider1, slider2, slider3, slider4 } from "../../../assets";
+import React, { useState } from "react";
 
 const ImageSlider = () => {
   const images = [
     {
       id: 1,
-      src: slider1,
+      src: gallery_2,
       alt: "Laboratory researcher",
       small: true,
     },
     {
       id: 2,
-      src: slider2,
+      src: courseAcls,
       alt: "Chemical beaker",
       small: false,
     },
     {
       id: 3,
-      src: slider3,
+      src: courseBls,
       alt: "Medical professionals",
       small: false,
     },
     {
       id: 4,
-      src: slider4,
+      src: coursePals,
       alt: "Medical equipment",
       small: true,
     },
@@ -101,7 +101,7 @@ const ImageSlider = () => {
         {/* Navigation Buttons */}
         <button
           onClick={handlePrev}
-          className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-[#FFFFFF26] hover:bg-[#FFFFFF26] text-white border p-1.5 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+          className="absolute left-1 top-1/2 -translate-y-1/2 z-10 lg:bg-[#FFFFFF26] bg-[#A91210] hover:bg-[#FFFFFF26] text-white border p-1.5 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
           aria-label="Previous image"
         >
           <ChevronLeft size={20} />
@@ -109,7 +109,7 @@ const ImageSlider = () => {
 
         <button
           onClick={handleNext}
-          className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-[#FFFFFF26] hover:bg-[#FFFFFF26] border text-white p-1.5 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+          className="absolute right-1 top-1/2 -translate-y-1/2 z-10 lg:bg-[#FFFFFF26] bg-[#A91210] hover:bg-[#FFFFFF26] border text-white p-1.5 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
           aria-label="Next image"
         >
           <ChevronRight size={20} />
@@ -129,7 +129,7 @@ const ImageSlider = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-full transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </div>

@@ -24,6 +24,7 @@ export default function SingleBlog() {
             <img
               src={event1}
               alt="event title"
+              loading="lazy"
               className="rounded-[20px] object-cover"
             />
           </div>

@@ -46,6 +46,7 @@ export default function Gallery({ data, onclick }: prop) {
                 <img
                   src={path}
                   alt={`gallery-${rowIdx}-${idx}`}
+                  loading="lazy"
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>

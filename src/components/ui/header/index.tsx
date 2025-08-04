@@ -32,7 +32,7 @@ const MobileNavigation = ({ show, onclick, pathname }: prop) => {
                   pathname === link
                     ? "text-[#A91210] border-b border-b-[#A91210]"
                     : "text-[#222222]"
-                } font-extrabold text-xl`}
+                } font-medium text-xl`}
               >
                 {name}
               </Link>
@@ -85,14 +85,15 @@ export default function Navigation({
     return (
       <div>
         <div
-          className={`flex justify-between items-center ${isHome && "mx-5"} ${
+          className={`flex justify-between items-center ${isHome && "mx-9"} ${
             isMobile && "py-2"
           } ${isTablet && "pt-3"}`}
         >
           <div className={isHome ? "block" : "hidden"}></div>
           <img
             src={coloredLogo}
-            alt="company logo"
+            alt="PulsePro Nigeria"
+            loading="lazy"
             width={isTablet ? 140 : 121}
             height={33.4}
           />
@@ -115,7 +116,11 @@ export default function Navigation({
 
   return (
     <div className={cn(className, "flex justify-between py-10 items-center")}>
-      <img src={isHome ? logo : coloredLogo} alt="company logo" />
+      <img
+        src={isHome ? logo : coloredLogo}
+        alt="PulsePro Nigeria"
+        loading="lazy"
+      />
       <div className="space-x-12">
         {NavLinks.map(({ name, link }, idx) => (
           <Link
@@ -125,7 +130,7 @@ export default function Navigation({
               pathname === link
                 ? "text-[#A91210] border-b border-b-[#A91210]"
                 : "text-[#222222]"
-            } font-extrabold text-xl`}
+            } font-medium text-xl`}
           >
             {name}
           </Link>

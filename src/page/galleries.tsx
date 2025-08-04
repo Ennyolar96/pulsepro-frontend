@@ -1,27 +1,27 @@
 import { FaAngleRight, FaArrowAltCircleRight } from "react-icons/fa";
-import Gallery from "../components/ui/gallery";
-import * as g from "../assets";
-import Blog from "../components/ui/blog";
-import PrimaryButton from "../components/ui/button";
+import Gallery from "@/components/ui/gallery";
+import * as g from "@/assets";
+import Blog from "@/components/ui/blog";
+import PrimaryButton from "@/components/ui/button";
 
 export default function Galleries() {
   const gallery = [
+    { path: g.gallery_1 },
+    { path: g.gallery_2 },
+    { path: g.gallery_3 },
+    { path: g.gallery_4 },
+    { path: g.gallery_5 },
+    { path: g.gallery_6 },
+    { path: g.gallery_7 },
+    { path: g.gallery_8 },
+    { path: g.gallery_9 },
+    { path: g.gallery_10 },
+    { path: g.gallery_11 },
+    { path: g.gallery_12 },
+    { path: g.gallery_13 },
+    { path: g.gallery_14 },
+    { path: g.aslc },
     { path: g.gallery1 },
-    { path: g.gallery2 },
-    { path: g.gallery3 },
-    { path: g.gallery4 },
-    { path: g.gallery5 },
-    { path: g.gallery6 },
-    { path: g.gallery7 },
-    { path: g.gallery8 },
-    { path: g.gallery1 },
-    { path: g.gallery2 },
-    { path: g.gallery3 },
-    { path: g.gallery4 },
-    { path: g.gallery5 },
-    { path: g.gallery6 },
-    { path: g.gallery7 },
-    { path: g.gallery8 },
   ];
 
   const LoadMore = () => {};

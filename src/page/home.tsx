@@ -1,7 +1,3 @@
-import { CalendarDays } from "lucide-react";
-import type { CSSProperties } from "react";
-import { FaArrowAltCircleRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import {
   about,
   banner,
@@ -9,24 +5,29 @@ import {
   event2,
   event3,
   event4,
-  gallery1,
-  gallery2,
-  gallery3,
-  gallery4,
-  gallery5,
-  gallery6,
-  gallery7,
-  gallery8,
-} from "../assets";
-import Blog from "../components/ui/blog";
-import PrimaryButton, { SecondaryButton } from "../components/ui/button";
-import Course from "../components/ui/course";
-import Footer from "../components/ui/footer";
-import Gallery from "../components/ui/gallery";
-import Navigation from "../components/ui/header";
-import ImageSlider from "../components/ui/sliders/image_slider";
-import Testimonial from "../components/ui/sliders/testimonial";
-import { isMobile, isTablet } from "../components/utils";
+  gallery_1,
+  gallery_2,
+  gallery_3,
+  gallery_4,
+  gallery_5,
+  gallery_6,
+  gallery_7,
+  gallery_8,
+} from "@/assets";
+import Blog from "@/components/ui/blog";
+import PrimaryButton, { SecondaryButton } from "@/components/ui/button";
+import Course from "@/components/ui/course";
+import Footer from "@/components/ui/footer";
+import Gallery from "@/components/ui/gallery";
+import Navigation from "@/components/ui/header";
+import ImageSlider from "@/components/ui/sliders/image_slider";
+import Testimonial from "@/components/ui/sliders/testimonial";
+import { Wrapper } from "@/components/ui/wrapper";
+import { isMobile, isTablet } from "@/components/utils";
+import { CalendarDays } from "lucide-react";
+import type { CSSProperties } from "react";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const backgroundStyle: CSSProperties = {
@@ -36,14 +37,14 @@ export default function Home() {
   const router = useNavigate();
 
   const gallery = [
-    { path: gallery1 },
-    { path: gallery2 },
-    { path: gallery3 },
-    { path: gallery4 },
-    { path: gallery5 },
-    { path: gallery6 },
-    { path: gallery7 },
-    { path: gallery8 },
+    { path: gallery_1 },
+    { path: gallery_2 },
+    { path: gallery_3 },
+    { path: gallery_4 },
+    { path: gallery_5 },
+    { path: gallery_6 },
+    { path: gallery_7 },
+    { path: gallery_8 },
   ];
 
   const LoadMore = () => {
@@ -95,7 +96,7 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto mt-5 p-5 md:p-20 space-y-20">
-        <div className="flex gap-10">
+        <Wrapper className="flex gap-10" data-aos="slide-up">
           <div className="w-full lg:w-1/2 bg-[#222222] space-y-5 text-white rounded-[20px] py-[58px] px-[46px]">
             <h2 className="text-[24px] md:text-[50px] font-extrabold">
               About PulsePro Nigeria
@@ -110,6 +111,13 @@ export default function Home() {
               excellence, innovation, and service, PulsePro offers certified
               training in emergency care and professional development.
             </p>
+
+            <div className="lg:hidden flex justify-center">
+              <PrimaryButton
+                name="Read More"
+                rightIcon={<FaArrowAltCircleRight />}
+              />
+            </div>
           </div>
 
           <div className="hidden lg:block w-1/2 bg-[#D9D9D969] space-y-5 text-white rounded-[20px] py-[33px] px-[41px]">
@@ -125,9 +133,9 @@ export default function Home() {
               />
             </div>
           </div>
-        </div>
+        </Wrapper>
 
-        <div className="space-y-10">
+        <Wrapper className="space-y-10" data-aos="slide-up">
           <div className="text-center space-y-2">
             <h3 className="text-[#222222] text-[25px] md:text-[40px] font-semibold">
               <span className="text-[#A91210]">Popular</span> Training Courses
@@ -141,7 +149,7 @@ export default function Home() {
           <div>
             <Course />
           </div>
-        </div>
+        </Wrapper>
       </div>
 
       <div className="text-center space-y-2">
@@ -153,7 +161,10 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="bg-[#222222] mt-10 pb-44 md:pb-12 space-y-20">
+      <Wrapper
+        data-aos="slide-up"
+        className="bg-[#222222] mt-10 pb-44 md:pb-12 space-y-20"
+      >
         <div className="container mx-auto p-5 md:p-20 space-y-20">
           <Gallery data={gallery} onclick={LoadMore} />
           <div className="text-center space-y-2">
@@ -167,7 +178,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {blogs.map(({ image, eventDate }, idx) => (
-              <div
+              <Wrapper
+                data-aos="slide-up"
                 key={idx}
                 className="flex bg-white rounded-[20px] p-1.5 md:p-2.5 gap-4"
               >
@@ -192,14 +204,17 @@ export default function Home() {
                     sapiente ipsum natus tempore illo.
                   </p>
                 </div>
-              </div>
+              </Wrapper>
             ))}
           </div>
         </div>
-      </div>
+      </Wrapper>
 
       <div className="flex justify-center -mt-44 md:-mt-18">
-        <div className="bg-[#A91210B0] text-white px-[27px] py-[37px] rounded-[20px] border flex flex-col md:flex-row text-center justify-between items-center w-[167px] md:w-[889px] h-[395px] md:h-[126px]">
+        <Wrapper
+          data-aos="slide-up"
+          className="bg-[#A91210B0] text-white px-[27px] py-[37px] rounded-[20px] border flex flex-col md:flex-row text-center justify-between items-center w-[167px] md:w-[889px] h-[395px] md:h-[126px]"
+        >
           <div>
             <h2 className="text-[30px] md:text-[40px] font-black">100+</h2>
             <p className="text-[14px] text-base">Quality Tutors</p>
@@ -219,11 +234,11 @@ export default function Home() {
             <h2 className="text-[30px] md:text-[40px] font-black">20+</h2>
             <p className="text-[14px] text-base">Rewards</p>
           </div>
-        </div>
+        </Wrapper>
       </div>
 
       <div className="container mx-auto mt-5 p-5 md:p-20 space-y-20">
-        <div className="mt-10">
+        <Wrapper data-aos="slide-up" className="mt-10">
           <div className="text-center space-y-2 mb-10">
             <h3 className="text-[#A91210] text-[25px] md:text-[40px] font-semibold">
               Testimonials
@@ -234,9 +249,9 @@ export default function Home() {
           </div>
 
           <Testimonial />
-        </div>
+        </Wrapper>
 
-        <div className="mt-10 space-y-10">
+        <Wrapper data-aos="slide-up" className="mt-10 space-y-10">
           <div className="text-center space-y-2 mb-10">
             <h3 className="text-[#222222] text-[25px] md:text-[40px] font-semibold">
               Blog <span className="text-[#A91210]">Post</span>
@@ -254,12 +269,12 @@ export default function Home() {
               rightIcon={<FaArrowAltCircleRight />}
             />
           </div>
-        </div>
+        </Wrapper>
       </div>
 
-      <div>
+      <Wrapper data-aos="slide-up">
         <Footer />
-      </div>
+      </Wrapper>
     </div>
   );
 }

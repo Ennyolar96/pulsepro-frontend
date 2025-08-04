@@ -1,6 +1,7 @@
 import { FaAngleRight } from "react-icons/fa";
 import SubHeading from "../components/ui/sub-heading";
 import { vector } from "../assets";
+import { Wrapper } from "@/components/ui/wrapper";
 
 export default function Career() {
   return (
@@ -35,8 +36,9 @@ export default function Career() {
             </div>
 
             <div className="space-y-10">
-              {Array.from({ length: 2 }).map((_, idx) => (
-                <div
+              {Array.from({ length: 5 }).map((_, idx) => (
+                <Wrapper
+                  data-aos="slide-up"
                   key={idx}
                   className="space-y-5 bg-[#F9F9F9] px-[40px] py-[36px] rounded-[20px]"
                 >
@@ -60,13 +62,13 @@ export default function Career() {
                       team.
                     </p>
                     <div className="flex items-center gap-3">
-                      <img src={vector} alt="full time job" />
+                      <img src={vector} loading="lazy" alt="full time job" />
                       <p className="text-[#667085] font-normal text-[13px]">
                         Full-time
                       </p>
                     </div>
                   </div>
-                </div>
+                </Wrapper>
               ))}
             </div>
           </div>

@@ -4,6 +4,7 @@ import PrimaryButton from "../components/ui/button";
 import type { CSSProperties } from "react";
 import { ContactImage } from "../assets";
 import { FaLocationDot } from "react-icons/fa6";
+import { Wrapper } from "@/components/ui/wrapper";
 
 export default function ContactUs() {
   const background: CSSProperties = {
@@ -25,7 +26,7 @@ export default function ContactUs() {
         <div>
           <h1 className="text-[#222222] font-bold text-[40px]">
             Contact
-            <span className="text-[#A91210]">Us</span>
+            <span className="text-[#A91210]"> Us</span>
           </h1>
 
           <div className="flex items-center gap-0.5 text-[#22222299] font-medium">
@@ -54,7 +55,7 @@ export default function ContactUs() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div>
+          <Wrapper data-aos="slide-up">
             <form className="space-y-10">
               <div className="flex flex-row gap-10">
                 <input
@@ -85,8 +86,9 @@ export default function ContactUs() {
 
               <PrimaryButton name="Send Message" className="px-5 py-4 w-full" />
             </form>
-          </div>
-          <div
+          </Wrapper>
+          <Wrapper
+            data-aos="slide-up"
             className="bg-no-repeat bg-contain bg-center object-cover"
             style={background}
           >
@@ -102,7 +104,7 @@ export default function ContactUs() {
                         sub === "tel"
                           ? "tel:+2348167049768"
                           : sub === "email"
-                          ? `mail:${title}`
+                          ? `mailto:${title}`
                           : "#"
                       }
                       className="text-base font-medium text-[#222]"
@@ -113,7 +115,7 @@ export default function ContactUs() {
                 </div>
               ))}
             </div>
-          </div>
+          </Wrapper>
         </div>
       </div>
     </div>
