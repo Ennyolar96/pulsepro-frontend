@@ -42,6 +42,8 @@ import gallery_6 from "./images/gallery-6.jpeg";
 import gallery_7 from "./images/gallery-7.jpeg";
 import gallery_8 from "./images/gallery-8.jpeg";
 import gallery_9 from "./images/gallery-9.jpeg";
+import slider from "./images/slider.jpeg";
+import hero from "./images/hero.png";
 
 export {
   about,
@@ -86,5 +88,7 @@ export {
   slider2,
   slider3,
   slider4,
+  slider,
   vector,
+  hero,
 };
