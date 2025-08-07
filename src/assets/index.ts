@@ -38,6 +38,7 @@ import courseEctw from "./images/courseEctw.jpeg";
 import hero from "./images/hero.png";
 import HeartSafer from "./images/heart-saver.jpeg";
 import BlackAndWhiteLogo from "./images/black-and-white-logo.jpeg";
+import ColoredLogoBackground from "./images/colored-logo-background.jpeg";
 
 export {
   about,
@@ -70,6 +71,7 @@ export {
   gallery_9,
   HeartSafer,
   BlackAndWhiteLogo,
+  ColoredLogoBackground,
   jjjj,
   logo,
   slider1,
