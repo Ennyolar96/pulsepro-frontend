@@ -1,4 +1,10 @@
-import { courseAcls, courseBls, courseFirstAid, coursePals } from "@/assets";
+import {
+  courseAcls,
+  courseBls,
+  courseEctw,
+  courseFirstAid,
+  coursePals,
+} from "@/assets";
 
 export const course = [
   {
@@ -20,15 +26,15 @@ export const course = [
     image: courseAcls,
   },
   {
-    name: "⁠Essential Clinical Techniques Workshop",
-    description:
-      "Master the core skills every clinician needs. This hands-on workshop covers suturing, cannulation, advanced airway management, and trauma management, equipping you with essential techniques for confident, effective care in emergency and clinical settings. Open to nurses, medical students, and frontline healthcare providers. Led by experienced practitioners, participants will receive guided, practical instruction in a simulated environment, enabling them to develop competence in essential techniques needed to respond effectively in urgent care scenarios.",
-    image: courseAcls,
-  },
-  {
     name: "Paediatrics Advanced Life Support (PALS)",
     description:
       "PALS is an advanced course designed to equip healthcare providers with the knowledge and skills to recognize and manage critically ill infants and children. The training focuses on early identification of respiratory and circulatory compromise, effective pediatric resuscitation techniques, team dynamics, and post-resuscitation care. At PulsePro Nigeria, our PALS course follows evidence-based guidelines and includes hands-on simulations to prepare participants for real-life pediatric emergencies.",
     image: coursePals,
+  },
+  {
+    name: "⁠Essential Clinical Techniques Workshop",
+    description:
+      "Master the core skills every clinician needs. This hands-on workshop covers suturing, cannulation, advanced airway management, and trauma management, equipping you with essential techniques for confident, effective care in emergency and clinical settings. Open to nurses, medical students, and frontline healthcare providers. Led by experienced practitioners, participants will receive guided, practical instruction in a simulated environment, enabling them to develop competence in essential techniques needed to respond effectively in urgent care scenarios.",
+    image: courseEctw,
   },
 ];

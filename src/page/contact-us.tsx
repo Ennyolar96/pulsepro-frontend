@@ -1,14 +1,14 @@
-import { FaAngleRight, FaEnvelope, FaWhatsapp } from "react-icons/fa";
-import SubHeading from "../components/ui/sub-heading";
-import PrimaryButton from "../components/ui/button";
-import type { CSSProperties } from "react";
-import { ContactImage } from "../assets";
-import { FaLocationDot } from "react-icons/fa6";
 import { Wrapper } from "@/components/ui/wrapper";
+import type { CSSProperties } from "react";
+import { FaAngleRight, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { BlackAndWhiteLogo } from "../assets";
+import PrimaryButton from "../components/ui/button";
+import SubHeading from "../components/ui/sub-heading";
 
 export default function ContactUs() {
   const background: CSSProperties = {
-    backgroundImage: `url(${ContactImage})`,
+    backgroundImage: `url(${BlackAndWhiteLogo})`,
   };
 
   const contact = [

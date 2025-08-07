@@ -21,7 +21,7 @@ export default function Galleries() {
     { path: g.gallery_13 },
     { path: g.gallery_14 },
     { path: g.aslc },
-    { path: g.gallery1 },
+    { path: g.courseEctw },
   ];
 
   const LoadMore = () => {};

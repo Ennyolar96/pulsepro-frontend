@@ -5,14 +5,6 @@ import event1 from "./images/event1.png";
 import event2 from "./images/event2.png";
 import event3 from "./images/event3.png";
 import event4 from "./images/event4.png";
-import gallery1 from "./images/gallery1.png";
-import gallery2 from "./images/gallery2.png";
-import gallery3 from "./images/gallery3.png";
-import gallery4 from "./images/gallery4.png";
-import gallery5 from "./images/gallery5.png";
-import gallery6 from "./images/gallery6.png";
-import gallery7 from "./images/gallery7.png";
-import gallery8 from "./images/gallery8.png";
 import jjjj from "./images/jjjjj.png";
 import logo from "./images/logo.png";
 import coloredLogo from "./images/pulsepro.png";
@@ -42,8 +34,10 @@ import gallery_6 from "./images/gallery-6.jpeg";
 import gallery_7 from "./images/gallery-7.jpeg";
 import gallery_8 from "./images/gallery-8.jpeg";
 import gallery_9 from "./images/gallery-9.jpeg";
-import slider from "./images/slider.jpeg";
+import courseEctw from "./images/courseEctw.jpeg";
 import hero from "./images/hero.png";
+import HeartSafer from "./images/heart-saver.jpeg";
+import BlackAndWhiteLogo from "./images/black-and-white-logo.jpeg";
 
 export {
   about,
@@ -60,14 +54,6 @@ export {
   event2,
   event3,
   event4,
-  gallery1,
-  gallery2,
-  gallery3,
-  gallery4,
-  gallery5,
-  gallery6,
-  gallery7,
-  gallery8,
   gallery_1,
   gallery_10,
   gallery_11,
@@ -82,13 +68,15 @@ export {
   gallery_7,
   gallery_8,
   gallery_9,
+  HeartSafer,
+  BlackAndWhiteLogo,
   jjjj,
   logo,
   slider1,
   slider2,
   slider3,
   slider4,
-  slider,
+  courseEctw,
   vector,
   hero,
 };

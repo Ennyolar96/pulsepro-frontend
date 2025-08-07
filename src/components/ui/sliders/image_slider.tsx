@@ -1,4 +1,4 @@
-import { courseBls, coursePals, gallery_2, slider } from "@/assets";
+import { courseAcls, courseBls, coursePals, HeartSafer } from "@/assets";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState } from "react";
 
@@ -6,19 +6,19 @@ const ImageSlider = () => {
   const images = [
     {
       id: 1,
-      src: gallery_2,
+      src: HeartSafer,
       alt: "Laboratory researcher",
       small: true,
     },
     {
       id: 2,
-      src: slider,
+      src: courseBls,
       alt: "Chemical beaker",
       small: false,
     },
     {
       id: 3,
-      src: courseBls,
+      src: courseAcls,
       alt: "Medical professionals",
       small: false,
     },

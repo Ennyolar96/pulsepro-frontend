@@ -1,5 +1,4 @@
 import {
-  about,
   event1,
   event2,
   event3,
@@ -74,7 +73,7 @@ export default function Home() {
             </h1>
 
             <p className="font-semibold text-base md:text-[25px] text-white">
-              Bringing medical awareness, expert skillsets, and education
+              Bringing medical awareness, expert skillets, and education
               together
             </p>
 
@@ -122,7 +121,7 @@ export default function Home() {
 
           <div className="hidden lg:block w-1/2 bg-[#D9D9D969] space-y-5 text-white rounded-[20px] py-[33px] px-[41px]">
             <img
-              src={about}
+              src={gallery_2}
               alt="Training section with student"
               className="w-full h-[307px] object-cover rounded-[10px]"
             />
