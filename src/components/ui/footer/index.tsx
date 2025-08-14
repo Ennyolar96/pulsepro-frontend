@@ -44,7 +44,7 @@ export default function Footer() {
 
           <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-10">
             <div>
-              <img src={logo} alt="PulsePro Nigeria" loading="lazy" />
+              <img src={logo} alt="ResusPro Nigeria" loading="lazy" />
             </div>
             <div className="gap-5 md:gap-12 flex flex-col md:flex-row">
               {NavLinks.map(({ name, link }, idx) => (
@@ -75,7 +75,7 @@ export default function Footer() {
       <div className="bg-[#A91210] h-[70px] md:h-[56px] flex items-center">
         <div className="container mx-auto">
           <p className="flex justify-center text-white text-base font-medium">
-            {new Date().getFullYear()} PulsePro Nigeria. All rights reserved
+            {new Date().getFullYear()} ResusPro Nigeria. All rights reserved
           </p>
         </div>
       </div>

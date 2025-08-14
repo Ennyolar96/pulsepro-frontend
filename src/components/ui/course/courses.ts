@@ -28,7 +28,7 @@ export const course = [
   {
     name: "Paediatrics Advanced Life Support (PALS)",
     description:
-      "PALS is an advanced course designed to equip healthcare providers with the knowledge and skills to recognize and manage critically ill infants and children. The training focuses on early identification of respiratory and circulatory compromise, effective pediatric resuscitation techniques, team dynamics, and post-resuscitation care. At PulsePro Nigeria, our PALS course follows evidence-based guidelines and includes hands-on simulations to prepare participants for real-life pediatric emergencies.",
+      "PALS is an advanced course designed to equip healthcare providers with the knowledge and skills to recognize and manage critically ill infants and children. The training focuses on early identification of respiratory and circulatory compromise, effective pediatric resuscitation techniques, team dynamics, and post-resuscitation care. At ResusPro Nigeria, our PALS course follows evidence-based guidelines and includes hands-on simulations to prepare participants for real-life pediatric emergencies.",
     image: coursePals,
   },
   {

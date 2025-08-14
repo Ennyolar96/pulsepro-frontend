@@ -13,7 +13,7 @@ export default function ContactUs() {
 
   const contact = [
     { title: "+234 816 704 9768", sub: "tel", icon: FaWhatsapp },
-    { title: "info@pulsepronigeria.com", sub: "email", icon: FaEnvelope },
+    { title: "info@resuspronigeria.com", sub: "email", icon: FaEnvelope },
     {
       title: "103, Ogo-oluwa, Gbongan/Ibadan Road, Osogbo, Osun State.",
       sub: "",

@@ -98,16 +98,16 @@ export default function Home() {
         <Wrapper className="flex gap-10" data-aos="slide-up">
           <div className="w-full lg:w-1/2 bg-[#222222] space-y-5 text-white rounded-[20px] py-[58px] px-[46px]">
             <h2 className="text-[24px] md:text-[50px] font-extrabold">
-              About PulsePro Nigeria
+              About ResusPro Nigeria
             </h2>
             <p className="text-base font-medium leading-8 text-justify">
-              PulsePro Nigeria is forward-thinking medical training institute
+              ResusPro Nigeria is forward-thinking medical training institute
               committed to equipping healthcare professionals and the general
               public with the skills, knowledge, and confidence to save lives.
             </p>
             <p className="text-base font-medium leading-8 text-justify">
               Located in Osun State, Nigeria and built on a foundation of
-              excellence, innovation, and service, PulsePro offers certified
+              excellence, innovation, and service, ResusPro offers certified
               training in emergency care and professional development.
             </p>
 

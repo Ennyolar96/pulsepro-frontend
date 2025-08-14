@@ -9,4 +9,4 @@ Allow: /
 
 
 # Sitemap location
-Sitemap: https://pulsepronigeria.com/sitemap.xml
+Sitemap: https://resuspronigeria.com/sitemap.xml

@@ -15,7 +15,7 @@ const urls = [
 ];
 
 const sitemapStream = new SitemapStream({
-  hostname: "https://pulsepronigeria.com",
+  hostname: "https://resuspronigeria.com",
 });
 
 streamToPromise(sitemapStream)

@@ -1,5 +1,5 @@
 {
-  "name": "pulsepro",
+  "name": "resuspro",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "build": "npm run generate-sitemap && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate-sitemap": "node generate-sitemap.js"
+    "sitemap": "node generate-sitemap.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
