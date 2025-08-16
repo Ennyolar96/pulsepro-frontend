@@ -115,6 +115,7 @@ export default function Home() {
               <PrimaryButton
                 name="Read More"
                 rightIcon={<FaArrowAltCircleRight />}
+                handle={() => router("/about-us")}
               />
             </div>
           </div>
@@ -129,6 +130,7 @@ export default function Home() {
               <PrimaryButton
                 name="Read More"
                 rightIcon={<FaArrowAltCircleRight />}
+                handle={() => router("/about-us")}
               />
             </div>
           </div>
@@ -266,6 +268,7 @@ export default function Home() {
             <PrimaryButton
               name="View More"
               rightIcon={<FaArrowAltCircleRight />}
+              handle={() => router("/news")}
             />
           </div>
         </Wrapper>

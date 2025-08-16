@@ -39,6 +39,9 @@ import hero from "./images/hero.png";
 import HeartSafer from "./images/heart-saver.jpeg";
 import BlackAndWhiteLogo from "./images/black-and-white-logo.jpeg";
 import ColoredLogoBackground from "./images/colored-logo-background.jpeg";
+import CPR1 from "./images/cpr-1.jpg";
+import CPR2 from "./images/cpr-2.jpg";
+import CPR3 from "./images/cpr-3.jpg";
 
 export {
   about,
@@ -81,4 +84,7 @@ export {
   courseEctw,
   vector,
   hero,
+  CPR1,
+  CPR2,
+  CPR3,
 };
