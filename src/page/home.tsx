@@ -1,4 +1,5 @@
 import {
+  banner,
   event1,
   event2,
   event3,
@@ -11,7 +12,6 @@ import {
   gallery_6,
   gallery_7,
   gallery_8,
-  hero,
 } from "@/assets";
 import Blog from "@/components/ui/blog";
 import PrimaryButton, { SecondaryButton } from "@/components/ui/button";
@@ -30,7 +30,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const backgroundStyle: CSSProperties = {
-    backgroundImage: `url(${hero})`,
+    backgroundImage: `url(${banner})`,
     backgroundSize: isMobile ? "100% 85%" : isTablet ? "100% 100%" : "cover",
   };
   const router = useNavigate();

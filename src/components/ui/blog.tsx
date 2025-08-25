@@ -18,10 +18,9 @@ export default function Blog({ count, className }: prop) {
       )}
     >
       {Array.from({ length: count }).map((_, idx) => (
-        <Wrapper data-aos="slide-up">
+        <Wrapper data-aos="slide-up" key={idx}>
           <Link
             to={"/new/bill-walsh-leadership-lesson"}
-            key={idx}
             className="block space-y-3"
           >
             <img

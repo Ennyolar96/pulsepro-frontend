@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { coloredLogo, logo } from "../../../assets";
 import PrimaryButton from "../button";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { cn } from "../../utils";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLinks } from "./links";
 import { useEffect, useState } from "react";
+import { colorLogo, whiteLogo } from "@/assets";
 
 interface prop {
   show: boolean;
@@ -91,7 +91,7 @@ export default function Navigation({
         >
           <div className={isHome ? "block" : "hidden"}></div>
           <img
-            src={coloredLogo}
+            src={colorLogo}
             alt="PulsePro Nigeria"
             loading="lazy"
             width={isTablet ? 140 : 121}
@@ -117,11 +117,11 @@ export default function Navigation({
   return (
     <div className={cn(className, "flex justify-between py-10 items-center")}>
       <img
-        src={isHome ? logo : coloredLogo}
+        src={isHome ? whiteLogo : colorLogo}
         alt="PulsePro Nigeria"
         loading="lazy"
       />
-      <div className="space-x-12">
+      <div className="space-x-10">
         {NavLinks.map(({ name, link }, idx) => (
           <Link
             to={link}

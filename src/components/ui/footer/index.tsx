@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { logo } from "../../../assets";
 import PrimaryButton from "../button";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedinIn, FaSquareFacebook } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io";
 import { NavLinks } from "../header/links";
+import { whiteLogo } from "@/assets";
 
 export default function Footer() {
   const social = [
@@ -44,7 +44,7 @@ export default function Footer() {
 
           <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-10">
             <div>
-              <img src={logo} alt="ResusPro Nigeria" loading="lazy" />
+              <img src={whiteLogo} alt="ResusPro Nigeria" loading="lazy" />
             </div>
             <div className="gap-5 md:gap-12 flex flex-col md:flex-row">
               {NavLinks.map(({ name, link }, idx) => (

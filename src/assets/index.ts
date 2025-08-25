@@ -1,20 +1,10 @@
 import background from "./images/background.png";
 import banner from "./images/banner.png";
-import ContactImage from "./images/contact-image.png";
 import event1 from "./images/event1.png";
 import event2 from "./images/event2.png";
 import event3 from "./images/event3.png";
 import event4 from "./images/event4.png";
-import jjjj from "./images/jjjjj.png";
-import logo from "./images/logo.png";
-import coloredLogo from "./images/pulsepro.png";
-import slider1 from "./images/Rectangle 10.png";
-import slider2 from "./images/Rectangle 11.png";
-import slider3 from "./images/Rectangle 12.png";
-import slider4 from "./images/Rectangle 13.png";
-import about from "./images/Rectangle 16.png";
 import vector from "./images/Vector.png";
-/*----------------------------------------Real images ---------------------------------------------------*/
 import aslc from "./images/acls.jpeg";
 import courseAcls from "./images/course-acls.jpeg";
 import courseBls from "./images/course-bls.jpeg";
@@ -35,21 +25,17 @@ import gallery_7 from "./images/gallery-7.jpeg";
 import gallery_8 from "./images/gallery-8.jpeg";
 import gallery_9 from "./images/gallery-9.jpeg";
 import courseEctw from "./images/courseEctw.jpeg";
-import hero from "./images/hero.png";
 import HeartSafer from "./images/heart-saver.jpeg";
-import BlackAndWhiteLogo from "./images/black-and-white-logo.jpeg";
-import ColoredLogoBackground from "./images/colored-logo-background.jpeg";
 import CPR1 from "./images/cpr-1.jpg";
 import CPR2 from "./images/cpr-2.jpg";
 import CPR3 from "./images/cpr-3.jpg";
+import colorLogo from "./images/color-logo.png";
+import whiteLogo from "./images/white-logo.png";
 
 export {
-  about,
   aslc,
   background,
   banner,
-  coloredLogo,
-  ContactImage,
   courseAcls,
   courseBls,
   courseFirstAid,
@@ -73,18 +59,11 @@ export {
   gallery_8,
   gallery_9,
   HeartSafer,
-  BlackAndWhiteLogo,
-  ColoredLogoBackground,
-  jjjj,
-  logo,
-  slider1,
-  slider2,
-  slider3,
-  slider4,
   courseEctw,
   vector,
-  hero,
   CPR1,
   CPR2,
   CPR3,
+  colorLogo,
+  whiteLogo,
 };
