@@ -148,7 +148,7 @@ export default function Home() {
           </div>
 
           <div>
-            <Course />
+            <Course param="/training" />
           </div>
         </Wrapper>
       </div>

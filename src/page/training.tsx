@@ -17,7 +17,7 @@ export default function Training() {
       </div>
 
       <div>
-        <Course />
+        <Course param="/training" />
       </div>
 
       <div className="space-y-10">

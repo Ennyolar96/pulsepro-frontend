@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Aside() {
+export default function Aside({ param }: { param: string[] }) {
   const side = [
     { link: "dashboard", name: "Dashboard" },
     { link: "courses", name: "Courses" },
@@ -13,15 +13,19 @@ export default function Aside() {
   ];
   return (
     <div className="flex flex-col space-y-5">
-      {side.map((item, idx) => (
-        <Link
-          to={item.link}
-          key={idx}
-          className="bg-[#A912100A] p-4 text-[#222222] border-l-4 border-l-[#A91210]"
-        >
-          {item.name}
-        </Link>
-      ))}
+      {side.map((item, idx) => {
+        return (
+          <Link
+            to={item.link}
+            key={idx}
+            className={`bg-[#A912100A] p-4 text-[#222222] ${
+              param.includes(item.link) ? "border-l-4 border-l-[#A91210]" : ""
+            }`}
+          >
+            {item.name}
+          </Link>
+        );
+      })}
     </div>
   );
 }

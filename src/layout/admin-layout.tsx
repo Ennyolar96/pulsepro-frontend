@@ -1,22 +1,39 @@
 import { colorLogo } from "@/assets";
 import Aside from "@/components/ui/aside";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { HiOutlineBars3 } from "react-icons/hi2";
 import { Outlet, useLocation } from "react-router-dom";
 
 export default function AdminLayout() {
   const { pathname } = useLocation();
+  const parts = pathname.split("/");
+  const lastPart = parts[parts.length - 1];
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    // if(window.innerWidth >= 768){
+
+    // }
   }, [pathname]);
+
+  const [open, setOpen] = useState<boolean>(false);
+  const handleMenu = () => setOpen(!open);
+
   return (
-    <div className="p-2">
-      <div className="h-[86px]">
+    <div className="">
+      <div className="h-[86px] p-2 pt-5">
         <div className="flex flex-row items-center">
           <div className="w-66">
             <img src={colorLogo} alt="logo" width={162} height={42.88} />
           </div>
-          <div className="flex flex-row justify-between">
-            <div className="flex flex-row items-center">
+          <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-row items-center gap-6">
+              <HiOutlineBars3
+                size={35}
+                className=""
+                role="button"
+                onClick={handleMenu}
+              />
               <input
                 type="search"
                 name="search"
@@ -29,11 +46,24 @@ export default function AdminLayout() {
           </div>
         </div>
       </div>
-      <div className="fixed w-66 bg-white h-full mt-12">
-        <Aside />
+
+      <div className="fixed w-66 hidden md:flex bg-white mt-10 h-full">
+        <Aside param={parts} />
       </div>
-      <div className="ml-70 bg-[#F0F0F0] h-dvh pt-5 font-[inter-semi]">
-        <div className="container mx-auto p-10">
+
+      <div
+        className={`fixed ${
+          open ? "flex" : "hidden"
+        } w-66 bg-white z-10 h-full`}
+      >
+        <Aside param={parts} />
+      </div>
+
+      <div className="md:ml-70 bg-[#F0F0F0] pt-5 font-[inter-semi]">
+        <div className="container mx-auto p-6">
+          <h1 className="font-semibold text-[30px] text-[#222222] capitalize">
+            {lastPart}
+          </h1>
           <Outlet />
         </div>
       </div>

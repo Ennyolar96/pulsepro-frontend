@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Wrapper } from "../wrapper";
 import { course } from "./courses";
 
-export default function Course() {
+export default function Course({ param }: { param: string }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {course.map(({ name, description, image }, idx) => {
@@ -13,7 +13,7 @@ export default function Course() {
             key={idx}
             className="border border-[#A91210] rounded-[20px] space-y-5 font-[inter-SemiBold]"
           >
-            <Link to="/training/first-ait-cpr">
+            <Link to={`${param}/first-ait-cpr`}>
               <div className="h-[250px]">
                 <img
                   src={image}
@@ -25,7 +25,8 @@ export default function Course() {
 
               <div className="space-y-4 p-5">
                 <h5 className="text-[#222222] text-[20px] font-medium">
-                  {number}. {name}
+                  <span className="text-[#A91210]">{number}. </span>
+                  {name}
                 </h5>
                 <p className="text-[#222222] text-base line-clamp-4">
                   {description}

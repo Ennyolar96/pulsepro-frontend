@@ -13,6 +13,11 @@ import NotFound from "../page/notfound";
 import SingleTraining from "@/page/single-training";
 import Dashboard from "@/admin/dashboard";
 import AdminLayout from "@/layout/admin-layout";
+import Courses from "@/admin/course";
+import SingleCourse from "@/admin/course/single-course";
+import Event from "@/admin/event";
+import SingleEvent from "@/admin/event/single-event";
+import Careers from "@/admin/career";
 
 export default function ApplicationRoute() {
   return (
@@ -32,6 +37,12 @@ export default function ApplicationRoute() {
       </Route>
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="courses" element={<Courses />} />
+        <Route path="courses/:slug" element={<SingleCourse />} />
+        <Route path="events" element={<Event />} />
+        <Route path="events/:slug" element={<SingleEvent />} />
+        <Route path="careers" element={<Careers />} />
+        <Route path="careers/:slug" element={<Event />} />
       </Route>
     </Routes>
   );
