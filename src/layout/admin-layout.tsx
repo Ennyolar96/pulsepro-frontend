@@ -8,21 +8,18 @@ export default function AdminLayout() {
   const { pathname } = useLocation();
   const parts = pathname.split("/");
   const lastPart = parts[parts.length - 1];
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    // if(window.innerWidth >= 768){
-
-    // }
-  }, [pathname]);
-
   const [open, setOpen] = useState<boolean>(false);
   const handleMenu = () => setOpen(!open);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setOpen((prev) => !prev);
+  }, [pathname]);
+
   return (
-    <div className="">
-      <div className="h-[86px] p-2 pt-5">
-        <div className="flex flex-row items-center">
+    <div className="space-y-5">
+      <div className="h-max p-2 pt-5">
+        <div className="flex flex-col md:flex-row gap-2">
           <div className="w-66">
             <img src={colorLogo} alt="logo" width={162} height={42.88} />
           </div>

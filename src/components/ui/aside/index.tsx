@@ -12,7 +12,7 @@ export default function Aside({ param }: { param: string[] }) {
     { link: "news", name: "News" },
   ];
   return (
-    <div className="flex flex-col space-y-5">
+    <div className="flex flex-col space-y-5 w-full">
       {side.map((item, idx) => {
         return (
           <Link
