@@ -18,22 +18,24 @@ export default function Careers() {
   return (
     <div className="mt-5 space-y-4">
       <div
-        className="flex items-center justify-between gap-2 overflow-x-auto"
+        className="flex items-center gap-3 overflow-x-auto"
         style={{ scrollbarWidth: "none" }}
       >
-        <div className="flex gap-3">
-          {["All", "Expired", "Draft"].map((item, idx) => (
-            <SecondaryButton
-              name={item}
-              key={idx}
-              className={`text-[#222222]! border-[#D8D8D833] ${
-                item === status ? "bg-[#01B3FF] text-white!" : "bg-[#D8D8D833]"
-              }`}
-              handle={() => setStatus(item)}
-            />
-          ))}
-        </div>
-        <PrimaryButton name="Add New" rightIcon={<FiPlusCircle />} />
+        {["All", "Expired", "Draft"].map((item, idx) => (
+          <SecondaryButton
+            name={item}
+            key={idx}
+            className={`text-[#222222]! border-[#D8D8D833] ${
+              item === status ? "bg-[#01B3FF] text-white!" : "bg-[#D8D8D833]"
+            }`}
+            handle={() => setStatus(item)}
+          />
+        ))}
+        <PrimaryButton
+          name="Add New"
+          rightIcon={<FiPlusCircle />}
+          className="ms-auto"
+        />
       </div>
       <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 px-2 rounded-[20px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
