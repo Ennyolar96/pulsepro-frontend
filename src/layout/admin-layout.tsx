@@ -19,9 +19,9 @@ export default function AdminLayout() {
 
   return (
     <Fragment>
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className="h-max p-2 pt-5">
-          <div className="flex flex-col md:flex-row gap-2">
+          <div className="flex flex-col lg:flex-row gap-2">
             <div className="w-66">
               <img src={colorLogo} alt="logo" width={162} height={42.88} />
             </div>
@@ -50,14 +50,16 @@ export default function AdminLayout() {
         </div>
 
         <div className="fixed w-66 bg-white mt-10 h-full">
-          <Aside param={parts} />
+          <Aside param={lastPart} />
         </div>
       </div>
 
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         <div className="h-max p-2">
           <div className="flex flex-col md:flex-row gap-2">
-            <img src={colorLogo} alt="logo" width={100} height={22.88} />
+            <div className="md:w-36">
+              <img src={colorLogo} alt="logo" width={100} height={22.88} />
+            </div>
             <div className="flex flex-row items-center gap-4">
               <HiOutlineBars3
                 size={35}
@@ -82,7 +84,7 @@ export default function AdminLayout() {
           <div className={`fixed flex z-10 top-0 left-0 w-full h-dvh`}>
             <div className="w-66 bg-white p-2 space-y-8">
               <img src={colorLogo} alt="logo" width={162} height={42.88} />
-              <Aside param={parts} />
+              <Aside param={lastPart} />
             </div>
             <button
               onClick={handleMenu}
@@ -92,7 +94,7 @@ export default function AdminLayout() {
         )}
       </div>
 
-      <div className="md:ml-70 bg-[#F0F0F0] font-[inter-semi]">
+      <div className="lg:ml-70 bg-[#F0F0F0] font-[inter-semi]">
         <div className="container mx-auto p-1 md:p-6">
           <h1 className="font-semibold text-[30px] text-[#222222] capitalize">
             {lastPart}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Aside({ param }: { param: string[] }) {
+export default function Aside({ param }: { param: string }) {
   const side = [
     { link: "dashboard", name: "Dashboard" },
     { link: "courses", name: "Courses" },
@@ -19,7 +19,7 @@ export default function Aside({ param }: { param: string[] }) {
             to={item.link}
             key={idx}
             className={`bg-[#A912100A] p-4 text-[#222222] ${
-              param.includes(item.link) ? "border-l-4 border-l-[#A91210]" : ""
+              param === item.link ? "border-l-4 border-l-[#A91210]" : ""
             }`}
           >
             {item.name}
