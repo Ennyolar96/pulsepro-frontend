@@ -9,7 +9,7 @@ export default function Aside({ param }: { param: string[] }) {
     { link: "gallery", name: "Gallery" },
     { link: "students", name: "Students" },
     { link: "staffs", name: "Staff/Tutor" },
-    { link: "news", name: "News" },
+    { link: "blogs", name: "News" },
   ];
   return (
     <div className="flex flex-col space-y-5 w-full">
