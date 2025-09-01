@@ -1,5 +1,5 @@
 import { CPR2 } from "@/assets";
-import PrimaryButton, { SecondaryButton } from "@/components/ui/button";
+import PrimaryButton, { SecondaryButton } from "@/components/ui/buttons";
 import { useState } from "react";
 import { FaCalendar } from "react-icons/fa6";
 import { FiPlusCircle } from "react-icons/fi";

@@ -20,6 +20,7 @@ import News from "../page/news";
 import NotFound from "../page/notfound";
 import SingleBlog from "../page/single-blog";
 import Training from "../page/training";
+import AddCourse from "@/admin/course/add-course";
 
 export default function ApplicationRoute() {
   return (
@@ -38,7 +39,7 @@ export default function ApplicationRoute() {
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="/dashboard" key="admin" element={<AdminLayout />}>
-        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="" element={<Dashboard />} />
         <Route path="courses" element={<Courses />} />
         <Route path="events" element={<Event />} />
         <Route path="careers" element={<Careers />} />
@@ -46,6 +47,7 @@ export default function ApplicationRoute() {
         <Route path="students" element={<Student />} />
         <Route path="staffs" element={<Staffs />} />
         <Route path="blogs" element={<Blogs />} />
+        <Route path="add-course" element={<AddCourse />} />
       </Route>
     </Routes>
   );

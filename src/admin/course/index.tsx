@@ -1,8 +1,9 @@
-import PrimaryButton from "@/components/ui/button";
+import PrimaryButton from "@/components/ui/buttons";
 import { course } from "@/components/ui/course/courses";
 import { useState } from "react";
 import { FiPlusCircle } from "react-icons/fi";
 import { MdModeEdit } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 interface CourseResponse {
   id?: number;
@@ -14,6 +15,7 @@ export default function Courses() {
   const [detail, setDetail] = useState<CourseResponse>(course[0]);
   const [view, setView] = useState<boolean>(false);
 
+  const route = useNavigate();
   const handleViewDetails = (item: CourseResponse) => {
     setDetail(item);
     setView(true);
@@ -22,7 +24,11 @@ export default function Courses() {
     <div className="mt-5 space-y-4">
       <div className="flex justify-between items-center">
         <h4 className="font-semibold text-base text-[#222222]">Courses</h4>
-        <PrimaryButton name="Add New" rightIcon={<FiPlusCircle />} />
+        <PrimaryButton
+          name="Add New"
+          rightIcon={<FiPlusCircle />}
+          handle={() => route("../add-course")}
+        />
       </div>
       <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 px-2 rounded-[20px] min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

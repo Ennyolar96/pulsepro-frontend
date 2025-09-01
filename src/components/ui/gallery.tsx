@@ -1,5 +1,5 @@
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import PrimaryButton from "./button";
+import PrimaryButton from "./buttons";
 import { isMobile } from "../utils";
 import { useState } from "react";
 import { IoTrash } from "react-icons/io5";

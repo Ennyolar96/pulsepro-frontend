@@ -1,4 +1,4 @@
-import PrimaryButton from "@/components/ui/button";
+import PrimaryButton from "@/components/ui/buttons";
 import { FaEdit, FaEye } from "react-icons/fa";
 import { FiPlusCircle } from "react-icons/fi";
 

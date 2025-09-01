@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PrimaryButton from "../button";
+import PrimaryButton from "../buttons";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedinIn, FaSquareFacebook } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io";

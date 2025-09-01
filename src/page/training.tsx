@@ -1,7 +1,7 @@
 import { FaAngleRight, FaArrowAltCircleRight } from "react-icons/fa";
 import Course from "../components/ui/course";
 import Blog from "../components/ui/blog";
-import PrimaryButton from "../components/ui/button";
+import PrimaryButton from "../components/ui/buttons";
 
 export default function Training() {
   return (

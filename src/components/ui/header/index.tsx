@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PrimaryButton from "../button";
+import PrimaryButton from "../buttons";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { cn } from "../../utils";
 import { GiHamburgerMenu } from "react-icons/gi";

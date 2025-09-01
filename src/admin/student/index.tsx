@@ -1,4 +1,4 @@
-import PrimaryButton, { SecondaryButton } from "@/components/ui/button";
+import PrimaryButton, { SecondaryButton } from "@/components/ui/buttons";
 import SmartPagination from "@/components/ui/pagination/smartPagination";
 import { useState } from "react";
 import { FaEdit, FaEye } from "react-icons/fa";

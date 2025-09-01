@@ -14,7 +14,7 @@ import {
   gallery_8,
 } from "@/assets";
 import Blog from "@/components/ui/blog";
-import PrimaryButton, { SecondaryButton } from "@/components/ui/button";
+import PrimaryButton, { SecondaryButton } from "@/components/ui/buttons";
 import Course from "@/components/ui/course";
 import Footer from "@/components/ui/footer";
 import Gallery from "@/components/ui/gallery";

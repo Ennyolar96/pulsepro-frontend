@@ -1,6 +1,6 @@
 import Gallery from "@/components/ui/gallery";
 import * as g from "@/assets";
-import PrimaryButton from "@/components/ui/button";
+import PrimaryButton from "@/components/ui/buttons";
 import { FiPlusCircle } from "react-icons/fi";
 
 export default function AdminGallery() {

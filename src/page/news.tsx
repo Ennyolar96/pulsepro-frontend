@@ -1,6 +1,6 @@
 import { FaAngleRight } from "react-icons/fa";
 import Blog from "../components/ui/blog";
-import { SecondaryButton } from "../components/ui/button";
+import { SecondaryButton } from "../components/ui/buttons";
 import SubHeading from "../components/ui/sub-heading";
 
 export default function News() {

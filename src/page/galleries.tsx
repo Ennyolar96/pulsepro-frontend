@@ -2,7 +2,7 @@ import { FaAngleRight, FaArrowAltCircleRight } from "react-icons/fa";
 import Gallery from "@/components/ui/gallery";
 import * as g from "@/assets";
 import Blog from "@/components/ui/blog";
-import PrimaryButton from "@/components/ui/button";
+import PrimaryButton from "@/components/ui/buttons";
 
 export default function Galleries() {
   const gallery = [

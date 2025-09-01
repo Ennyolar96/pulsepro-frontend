@@ -2,7 +2,7 @@ import { Wrapper } from "@/components/ui/wrapper";
 import type { CSSProperties } from "react";
 import { FaAngleRight, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import PrimaryButton from "../components/ui/button";
+import PrimaryButton from "../components/ui/buttons";
 import SubHeading from "../components/ui/sub-heading";
 
 export default function ContactUs() {

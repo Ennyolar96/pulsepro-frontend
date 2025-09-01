@@ -1,6 +1,6 @@
 import { gallery_2, gallery_4, gallery_5 } from "@/assets";
 import Blog from "@/components/ui/blog";
-import PrimaryButton from "@/components/ui/button";
+import PrimaryButton from "@/components/ui/buttons";
 import { Wrapper } from "@/components/ui/wrapper";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaAngleRight } from "react-icons/fa6";
