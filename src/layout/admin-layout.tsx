@@ -14,7 +14,7 @@ export default function AdminLayout() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setOpen((prev) => !prev);
+    setOpen(false);
   }, [pathname]);
 
   return (
@@ -94,9 +94,9 @@ export default function AdminLayout() {
         )}
       </div>
 
-      <div className="lg:ml-70 bg-[#F0F0F0] font-[inter-semi]">
+      <div className="lg:ml-70 bg-[#F0F0F0] font-[inter-semi] min-h-screen">
         <div className="container mx-auto p-1 md:p-6">
-          <h1 className="font-semibold text-[30px] text-[#222222] capitalize">
+          <h1 className="font-semibold text-[30px] text-[#222222] capitalize py-3">
             {lastPart}
           </h1>
           <Outlet />

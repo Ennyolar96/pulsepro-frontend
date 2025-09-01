@@ -24,7 +24,7 @@ export default function Courses() {
         <h4 className="font-semibold text-base text-[#222222]">Courses</h4>
         <PrimaryButton name="Add New" rightIcon={<FiPlusCircle />} />
       </div>
-      <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 px-2 rounded-[20px]">
+      <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 px-2 rounded-[20px] min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {course.map((item, idx) => {
             const number = String(idx + 1).padStart(2, "0");

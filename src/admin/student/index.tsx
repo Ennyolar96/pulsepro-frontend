@@ -9,7 +9,7 @@ export default function Student() {
   const [page, setPage] = useState(1);
   const totalPages = 20;
   return (
-    <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 pb-14 px-2 rounded-[20px] space-y-5">
+    <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 pb-14 px-2 rounded-[20px] space-y-5 min-h-screen">
       <div
         className="flex items-center gap-3 overflow-x-auto"
         style={{ scrollbarWidth: "none" }}

@@ -3,8 +3,14 @@ import PrimaryButton, { SecondaryButton } from "@/components/ui/button";
 import { useState } from "react";
 import { FaCalendar } from "react-icons/fa6";
 import { FiPlusCircle } from "react-icons/fi";
-import { IoIosTime } from "react-icons/io";
-import { MdModeEdit, MdOutlineFavoriteBorder } from "react-icons/md";
+import { GoDotFill } from "react-icons/go";
+import { HiUsers } from "react-icons/hi2";
+import { IoIosTime, IoMdTrash } from "react-icons/io";
+import {
+  MdArrowOutward,
+  MdModeEdit,
+  MdOutlineFavoriteBorder,
+} from "react-icons/md";
 
 export default function Event() {
   const [status, setStatus] = useState<string>("All");
@@ -38,41 +44,67 @@ export default function Event() {
         />
       </div>
 
-      <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 px-2 rounded-[20px]">
+      <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 px-2 rounded-[20px] min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {Array.from({ length: 6 }).map((_, i) => (
+          {Array.from({ length: 6 }).map((_, idx) => (
             <div
-              key={i}
-              className="border border-[#A91210] rounded-[20px] bg-white flex flex-row flex-nowrap shadow-md gap-3"
-              onClick={() => handleViewDetails(i + 1)}
+              key={idx}
+              className="border border-[#A91210] rounded-[20px] cursor-pointer"
             >
-              <img
-                src={CPR2}
-                alt=""
-                className="h-auto w-36 rounded-tl-[20px] rounded-bl-[20px] object-cover"
-              />
-              <div className="flex-1 space-y-3 py-3">
-                <h3 className="text-[20px] text-medium line-clamp-2">
-                  AHA Basic Life Support AHA Basic Life Support{" "}
-                </h3>
-                <div className="flex">
-                  <p className="text-[12px] flex items-center gap-1 bg-[#01B3FF24] text-[#01B3FF] p-1 rounded">
-                    <FaCalendar />
-                    25th Aug, 2025
-                  </p>
-                  <p className="text-[12px] flex items-center gap-1 ms-3 bg-[#FFAE4C24] text-[#FFAE4C] p-1 rounded">
-                    <IoIosTime />
-                    10AM
-                  </p>
-                </div>
+              <div className="relative">
+                <img
+                  src={CPR2}
+                  alt="blog title"
+                  className="h-44 w-full object-cover rounded-t-2xl"
+                />
+                <button className="absolute bottom-2 bg-white right-2 p-2 border-none outline-0 rounded-md cursor-pointer">
+                  <IoMdTrash size={20} color="red" />
+                </button>
+              </div>
 
-                <div className="flex gap-2">
-                  <p className="p-1 flex rounded bg-[#8979FF33] text-[#8979FF] text-[12px]">
+              <div
+                className="p-5 space-y-2"
+                onClick={() => handleViewDetails(idx)}
+              >
+                <div className="flex items-center gap-1">
+                  <p className="text-[#A91210] text-[14px] font-medium">
                     Physical Event
                   </p>
-                  <p className="text-[12px] text-[#A91210] flex items-center gap-1">
-                    245K
-                    <MdOutlineFavoriteBorder />
+                  <GoDotFill color="#A91210" size={8} />
+                  <p className="text-[#A91210] text-[14px] font-medium">
+                    1 Jan 2025
+                  </p>
+                  <GoDotFill color="#A91210" size={8} />
+                  <p className="text-[#A91210] text-[14px] font-medium">
+                    10 AM to 12 PM
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <h4 className="text-[#1A1A1A] line-clamp-1 text-[20px] font-medium">
+                    Bill Walsh Leadership lessons
+                  </h4>
+                  <MdArrowOutward
+                    color="#222222"
+                    size={18}
+                    className="ms-auto w-5"
+                  />
+                </div>
+
+                <p className="line-clamp-1 text-[#667085] text-base font-normal">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Iusto nesciunt minus temporibus incidunt explicabo veritatis,
+                  mollitia cupiditate corrupti distinctio rerum iste optio
+                  officia maiores provident repellat magnam velit architecto
+                  odio?
+                </p>
+
+                <div className="flex justify-between items-center">
+                  <p className="text-[#222222] text-[12px] font-medium">
+                    2999 Views
+                  </p>
+                  <p className="text-[#222222] text-[12px] font-medium flex items-center gap-1">
+                    <span>41</span>
+                    <HiUsers size={16} />
                   </p>
                 </div>
               </div>
