@@ -1,37 +1,43 @@
-import * as React from "react"
-import { JSX, useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { useCollaborationContext } from "@lexical/react/LexicalCollaborationContext"
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-import { useLexicalNodeSelection } from "@lexical/react/useLexicalNodeSelection"
-import { mergeRegister } from "@lexical/utils"
+import { useCollaborationContext } from "@lexical/react/LexicalCollaborationContext";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { useLexicalNodeSelection } from "@lexical/react/useLexicalNodeSelection";
+import { mergeRegister } from "@lexical/utils";
 import {
   $getNodeByKey,
   $getSelection,
   $isNodeSelection,
-  BaseSelection,
+  type BaseSelection,
   CLICK_COMMAND,
   COMMAND_PRIORITY_LOW,
   KEY_BACKSPACE_COMMAND,
   KEY_DELETE_COMMAND,
-  NodeKey,
-} from "lexical"
+  type NodeKey,
+} from "lexical";
+import {
+  type JSX,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import type {
   Option,
   Options,
   PollNode,
-} from "@/components/editor/nodes/poll-node"
+} from "@/components/editor/nodes/poll-node";
 import {
   $isPollNode,
   createPollOption,
-} from "@/components/editor/nodes/poll-node"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+} from "@/components/editor/nodes/poll-node";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 function getTotalVotes(options: Options): number {
   return options.reduce((totalVotes, next) => {
-    return totalVotes + next.votes.length
-  }, 0)
+    return totalVotes + next.votes.length;
+  }, 0);
 }
 
 function PollOptionComponent({
@@ -41,22 +47,22 @@ function PollOptionComponent({
   totalVotes,
   withPollNode,
 }: {
-  index: number
-  option: Option
-  options: Options
-  totalVotes: number
+  index: number;
+  option: Option;
+  options: Options;
+  totalVotes: number;
   withPollNode: (
     cb: (pollNode: PollNode) => void,
     onSelect?: () => void
-  ) => void
+  ) => void;
 }): JSX.Element {
-  const { clientID } = useCollaborationContext()
-  const checkboxRef = useRef(null)
-  const votesArray = option.votes
-  const checkedIndex = votesArray.indexOf(clientID)
-  const checked = checkedIndex !== -1
-  const votes = votesArray.length
-  const text = option.text
+  const { clientID } = useCollaborationContext();
+  const checkboxRef = useRef(null);
+  const votesArray = option.votes;
+  const checkedIndex = votesArray.indexOf(clientID);
+  const checked = checkedIndex !== -1;
+  const votes = votesArray.length;
+  const text = option.text;
 
   return (
     <div className="mb-2.5 flex flex-row items-center">
@@ -71,10 +77,10 @@ function PollOptionComponent({
           ref={checkboxRef}
           className="absolute block h-full w-full cursor-pointer border-0 opacity-0"
           type="checkbox"
-          onChange={(e) => {
+          onChange={() => {
             withPollNode((node) => {
-              node.toggleVote(option, clientID)
-            })
+              node.toggleVote(option, clientID);
+            });
           }}
           checked={checked}
         />
@@ -91,19 +97,19 @@ function PollOptionComponent({
           type="text"
           value={text}
           onChange={(e) => {
-            const target = e.target
-            const value = target.value
-            const selectionStart = target.selectionStart
-            const selectionEnd = target.selectionEnd
+            const target = e.target;
+            const value = target.value;
+            const selectionStart = target.selectionStart;
+            const selectionEnd = target.selectionEnd;
             withPollNode(
               (node) => {
-                node.setOptionText(option, value)
+                node.setOptionText(option, value);
               },
               () => {
-                target.selectionStart = selectionStart
-                target.selectionEnd = selectionEnd
+                target.selectionStart = selectionStart;
+                target.selectionEnd = selectionEnd;
               }
-            )
+            );
           }}
           placeholder={`Option ${index + 1}`}
         />
@@ -114,12 +120,12 @@ function PollOptionComponent({
         aria-label="Remove"
         onClick={() => {
           withPollNode((node) => {
-            node.deleteOption(option)
-          })
+            node.deleteOption(option);
+          });
         }}
       />
     </div>
-  )
+  );
 }
 
 export default function PollComponent({
@@ -127,55 +133,55 @@ export default function PollComponent({
   options,
   nodeKey,
 }: {
-  nodeKey: NodeKey
-  options: Options
-  question: string
+  nodeKey: NodeKey;
+  options: Options;
+  question: string;
 }): JSX.Element {
-  const [editor] = useLexicalComposerContext()
-  const totalVotes = useMemo(() => getTotalVotes(options), [options])
+  const [editor] = useLexicalComposerContext();
+  const totalVotes = useMemo(() => getTotalVotes(options), [options]);
   const [isSelected, setSelected, clearSelection] =
-    useLexicalNodeSelection(nodeKey)
-  const [selection, setSelection] = useState<BaseSelection | null>(null)
-  const ref = useRef(null)
+    useLexicalNodeSelection(nodeKey);
+  const [selection, setSelection] = useState<BaseSelection | null>(null);
+  const ref = useRef(null);
 
   const $onDelete = useCallback(
     (payload: KeyboardEvent) => {
-      const deleteSelection = $getSelection()
+      const deleteSelection = $getSelection();
       if (isSelected && $isNodeSelection(deleteSelection)) {
-        const event: KeyboardEvent = payload
-        event.preventDefault()
+        const event: KeyboardEvent = payload;
+        event.preventDefault();
         editor.update(() => {
           deleteSelection.getNodes().forEach((node) => {
             if ($isPollNode(node)) {
-              node.remove()
+              node.remove();
             }
-          })
-        })
+          });
+        });
       }
-      return false
+      return false;
     },
     [editor, isSelected]
-  )
+  );
 
   useEffect(() => {
     return mergeRegister(
       editor.registerUpdateListener(({ editorState }) => {
-        setSelection(editorState.read(() => $getSelection()))
+        setSelection(editorState.read(() => $getSelection()));
       }),
       editor.registerCommand<MouseEvent>(
         CLICK_COMMAND,
         (payload) => {
-          const event = payload
+          const event = payload;
 
           if (event.target === ref.current) {
             if (!event.shiftKey) {
-              clearSelection()
+              clearSelection();
             }
-            setSelected(!isSelected)
-            return true
+            setSelected(!isSelected);
+            return true;
           }
 
-          return false
+          return false;
         },
         COMMAND_PRIORITY_LOW
       ),
@@ -189,8 +195,8 @@ export default function PollComponent({
         $onDelete,
         COMMAND_PRIORITY_LOW
       )
-    )
-  }, [clearSelection, editor, isSelected, nodeKey, $onDelete, setSelected])
+    );
+  }, [clearSelection, editor, isSelected, nodeKey, $onDelete, setSelected]);
 
   const withPollNode = (
     cb: (node: PollNode) => void,
@@ -198,27 +204,27 @@ export default function PollComponent({
   ): void => {
     editor.update(
       () => {
-        const node = $getNodeByKey(nodeKey)
+        const node = $getNodeByKey(nodeKey);
         if ($isPollNode(node)) {
-          cb(node)
+          cb(node);
         }
       },
       { onUpdate }
-    )
-  }
+    );
+  };
 
   const addOption = () => {
     withPollNode((node) => {
-      node.addOption(createPollOption())
-    })
-  }
+      node.addOption(createPollOption());
+    });
+  };
 
-  const isFocused = $isNodeSelection(selection) && isSelected
+  const isFocused = $isNodeSelection(selection) && isSelected;
 
   return (
     <div
       className={`bg-background max-w-[600px] min-w-[400px] cursor-pointer rounded-lg border border-gray-200 select-none ${
-        isFocused ? "outline-primary outline outline-2" : ""
+        isFocused ? "outline-primary outline-2" : ""
       }`}
       ref={ref}
     >
@@ -227,7 +233,7 @@ export default function PollComponent({
           {question}
         </h2>
         {options.map((option, index) => {
-          const key = option.uid
+          const key = option.uid;
           return (
             <PollOptionComponent
               key={key}
@@ -237,7 +243,7 @@ export default function PollComponent({
               options={options}
               totalVotes={totalVotes}
             />
-          )
+          );
         })}
         <div className="flex justify-center">
           <Button onClick={addOption} size="sm">
@@ -246,5 +252,5 @@ export default function PollComponent({
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -13,6 +13,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { nodes } from "./nodes";
 import { Plugins } from "./plugins";
 import { cn } from "@/lib/utils";
+import { HtmlExportPlugin } from "./htmlExportPlugin";
 
 const editorConfig: InitialConfigType = {
   namespace: "Editor",
@@ -30,6 +31,7 @@ export function Editor({
   onSerializedChange,
   className,
   classNames,
+  onHtmlChange,
 }: {
   editorState?: EditorState;
   editorSerializedState?: SerializedEditorState;
@@ -37,6 +39,7 @@ export function Editor({
   onSerializedChange?: (editorSerializedState: SerializedEditorState) => void;
   className?: string;
   classNames?: string;
+  onHtmlChange?: (html: string) => void;
 }) {
   return (
     <div
@@ -66,6 +69,7 @@ export function Editor({
                   onSerializedChange?.(editorState.toJSON());
                 }}
               />
+              {onHtmlChange && <HtmlExportPlugin onHtmlChange={onHtmlChange} />}
             </FloatingLinkContext>
           </SharedAutocompleteContext>
         </TooltipProvider>

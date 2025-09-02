@@ -1,9 +1,9 @@
-import * as React from "react"
-import { BlockWithAlignableContents } from "@lexical/react/LexicalBlockWithAlignableContents"
+import * as React from "react";
+import { BlockWithAlignableContents } from "@lexical/react/LexicalBlockWithAlignableContents";
 import {
   DecoratorBlockNode,
-  SerializedDecoratorBlockNode,
-} from "@lexical/react/LexicalDecoratorBlockNode"
+  type SerializedDecoratorBlockNode,
+} from "@lexical/react/LexicalDecoratorBlockNode";
 import type {
   EditorConfig,
   ElementFormatType,
@@ -11,18 +11,19 @@ import type {
   LexicalNode,
   NodeKey,
   Spread,
-} from "lexical"
+} from "lexical";
 
 type FigmaComponentProps = Readonly<{
   className: Readonly<{
-    base: string
-    focus: string
-  }>
-  format: ElementFormatType | null
-  nodeKey: NodeKey
-  documentID: string
-}>
+    base: string;
+    focus: string;
+  }>;
+  format: ElementFormatType | null;
+  nodeKey: NodeKey;
+  documentID: string;
+}>;
 
+// eslint-disable-next-line react-refresh/only-export-components
 function FigmaComponent({
   className,
   format,
@@ -43,31 +44,31 @@ function FigmaComponent({
         allowFullScreen={true}
       />
     </BlockWithAlignableContents>
-  )
+  );
 }
 
 export type SerializedFigmaNode = Spread<
   {
-    documentID: string
+    documentID: string;
   },
   SerializedDecoratorBlockNode
->
+>;
 
 export class FigmaNode extends DecoratorBlockNode {
-  __id: string
+  __id: string;
 
   static getType(): string {
-    return "figma"
+    return "figma";
   }
 
   static clone(node: FigmaNode): FigmaNode {
-    return new FigmaNode(node.__id, node.__format, node.__key)
+    return new FigmaNode(node.__id, node.__format, node.__key);
   }
 
   static importJSON(serializedNode: SerializedFigmaNode): FigmaNode {
-    const node = $createFigmaNode(serializedNode.documentID)
-    node.setFormat(serializedNode.format)
-    return node
+    const node = $createFigmaNode(serializedNode.documentID);
+    node.setFormat(serializedNode.format);
+    return node;
   }
 
   exportJSON(): SerializedFigmaNode {
@@ -76,35 +77,32 @@ export class FigmaNode extends DecoratorBlockNode {
       documentID: this.__id,
       type: "figma",
       version: 1,
-    }
+    };
   }
 
   constructor(id: string, format?: ElementFormatType, key?: NodeKey) {
-    super(format, key)
-    this.__id = id
+    super(format, key);
+    this.__id = id;
   }
 
   updateDOM(): false {
-    return false
+    return false;
   }
 
   getId(): string {
-    return this.__id
+    return this.__id;
   }
 
-  getTextContent(
-    _includeInert?: boolean | undefined,
-    _includeDirectionless?: false | undefined
-  ): string {
-    return `https://www.figma.com/file/${this.__id}`
+  getTextContent(): string {
+    return `https://www.figma.com/file/${this.__id}`;
   }
 
   decorate(_editor: LexicalEditor, config: EditorConfig): React.JSX.Element {
-    const embedBlockTheme = config.theme.embedBlock || {}
+    const embedBlockTheme = config.theme.embedBlock || {};
     const className = {
       base: embedBlockTheme.base || "",
       focus: embedBlockTheme.focus || "",
-    }
+    };
     return (
       <FigmaComponent
         className={className}
@@ -112,16 +110,16 @@ export class FigmaNode extends DecoratorBlockNode {
         nodeKey={this.getKey()}
         documentID={this.__id}
       />
-    )
+    );
   }
 }
 
 export function $createFigmaNode(documentID: string): FigmaNode {
-  return new FigmaNode(documentID)
+  return new FigmaNode(documentID);
 }
 
 export function $isFigmaNode(
   node: FigmaNode | LexicalNode | null | undefined
 ): node is FigmaNode {
-  return node instanceof FigmaNode
+  return node instanceof FigmaNode;
 }

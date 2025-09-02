@@ -1,20 +1,20 @@
-import { JSX } from "react"
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-import { TreeView } from "@lexical/react/LexicalTreeView"
-import { NotebookPenIcon } from "lucide-react"
+import { type JSX } from "react";
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { TreeView } from "@lexical/react/LexicalTreeView";
+import { NotebookPenIcon } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
+} from "@/components/ui/dialog";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 export function TreeViewPlugin(): JSX.Element {
-  const [editor] = useLexicalComposerContext()
+  const [editor] = useLexicalComposerContext();
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -40,5 +40,5 @@ export function TreeViewPlugin(): JSX.Element {
         </ScrollArea>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

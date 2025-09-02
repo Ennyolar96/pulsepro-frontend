@@ -1,26 +1,23 @@
+import { Editor } from "@/components/blocks/editor-x/editor";
+import PrimaryButton from "@/components/ui/buttons";
 import { FileInput, FormInput } from "@/components/ui/form";
 import { Form, Formik } from "formik";
-import { useState } from "react";
-import { type SerializedEditorState } from "lexical";
-import { Editor } from "@/components/blocks/editor-x/editor";
-import { initialValue } from "./initial";
-import { IoMdCloudUpload } from "react-icons/io";
 import { X } from "lucide-react";
-import PrimaryButton from "@/components/ui/buttons";
+import { useState } from "react";
+import { IoMdCloudUpload } from "react-icons/io";
 
 interface form {
   title: string;
 }
 
 export default function AddCourse() {
-  const [description, setDescription] =
-    useState<SerializedEditorState>(initialValue);
+  const [description, setDescription] = useState<string>("");
   const [coverImage, setCoverImage] = useState<File | null>(null);
   const [dragActive, setDragActive] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmitting = (value: form) => {
-    const data = { ...value, description, coverImage };
+    const data = { ...value, description: description, coverImage };
     console.log(data);
   };
 
@@ -42,11 +39,7 @@ export default function AddCourse() {
 
     return new Promise((resolve) => {
       image.onload = () => {
-        // if (image.width < minWidth || image.height < minWidth) {
-        //   resolve("Image dimensions must be at least 100x100px.");
-        // } else {
         resolve(null);
-        // }
         URL.revokeObjectURL(imageURL);
       };
       image.onerror = () => {
@@ -169,9 +162,10 @@ export default function AddCourse() {
             </div>
 
             <Editor
-              editorSerializedState={description}
-              onSerializedChange={(value) => setDescription(value)}
               className="h-66"
+              onHtmlChange={(html) => {
+                setDescription(html);
+              }}
             />
             <PrimaryButton
               type="submit"

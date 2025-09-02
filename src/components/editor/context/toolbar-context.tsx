@@ -1,22 +1,22 @@
-import { createContext, JSX, useContext } from "react"
-import { LexicalEditor } from "lexical"
+import { createContext, type JSX, useContext } from "react";
+import type { LexicalEditor } from "lexical";
 
 const Context = createContext<{
-  activeEditor: LexicalEditor
-  $updateToolbar: () => void
-  blockType: string
-  setBlockType: (blockType: string) => void
+  activeEditor: LexicalEditor;
+  $updateToolbar: () => void;
+  blockType: string;
+  setBlockType: (blockType: string) => void;
   showModal: (
     title: string,
     showModal: (onClose: () => void) => JSX.Element
-  ) => void
+  ) => void;
 }>({
   activeEditor: {} as LexicalEditor,
   $updateToolbar: () => {},
   blockType: "paragraph",
   setBlockType: () => {},
   showModal: () => {},
-})
+});
 
 export function ToolbarContext({
   activeEditor,
@@ -26,15 +26,15 @@ export function ToolbarContext({
   showModal,
   children,
 }: {
-  activeEditor: LexicalEditor
-  $updateToolbar: () => void
-  blockType: string
-  setBlockType: (blockType: string) => void
+  activeEditor: LexicalEditor;
+  $updateToolbar: () => void;
+  blockType: string;
+  setBlockType: (blockType: string) => void;
   showModal: (
     title: string,
     showModal: (onClose: () => void) => JSX.Element
-  ) => void
-  children: React.ReactNode
+  ) => void;
+  children: React.ReactNode;
 }) {
   return (
     <Context.Provider
@@ -48,9 +48,10 @@ export function ToolbarContext({
     >
       {children}
     </Context.Provider>
-  )
+  );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useToolbarContext() {
-  return useContext(Context)
+  return useContext(Context);
 }
