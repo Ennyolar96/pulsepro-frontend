@@ -3,5 +3,6 @@ export function setDomHiddenUntilFound(dom: HTMLElement): void {
 }
 
 export function domOnBeforeMatch(dom: HTMLElement, callback: () => void): void {
-  dom.onbeforematch = callback;
+  (dom as HTMLElement & { onbeforematch?: () => void }).onbeforematch =
+    callback;
 }
