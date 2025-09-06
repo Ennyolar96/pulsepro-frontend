@@ -19,7 +19,7 @@ export default function AdminLayout() {
 
   return (
     <Fragment>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block fixed w-full top-0 left-0 z-10 bg-background">
         <div className="h-max p-2 pt-5">
           <div className="flex flex-col lg:flex-row gap-2">
             <div className="w-66">
@@ -54,7 +54,7 @@ export default function AdminLayout() {
         </div>
       </div>
 
-      <div className="block lg:hidden">
+      <div className="block lg:hidden fixed w-full top-0 left-0 z-10 bg-background">
         <div className="h-max p-2">
           <div className="flex flex-col md:flex-row gap-2">
             <div className="md:w-36">
@@ -94,7 +94,7 @@ export default function AdminLayout() {
         )}
       </div>
 
-      <div className="lg:ml-70 bg-[#F0F0F0] font-[inter-semi] min-h-screen">
+      <div className="lg:ml-70 mt-20 bg-[#F0F0F0] font-[inter-semi] min-h-screen">
         <div className="container mx-auto p-1 md:p-6">
           <h1 className="font-semibold text-[30px] text-[#222222] capitalize py-3">
             {lastPart}

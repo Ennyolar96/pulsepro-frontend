@@ -76,7 +76,7 @@ export default function AddCourse() {
   };
 
   return (
-    <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] p-10 rounded-[20px]">
+    <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 px-2 rounded-[20px]">
       <Formik
         initialValues={{ title: "" }}
         // validationSchema={}
