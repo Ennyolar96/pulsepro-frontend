@@ -20,7 +20,6 @@ import News from "../page/news";
 import NotFound from "../page/notfound";
 import SingleBlog from "../page/single-blog";
 import Training from "../page/training";
-import AddCourse from "@/admin/course/add-course";
 
 export default function ApplicationRoute() {
   return (
@@ -47,7 +46,6 @@ export default function ApplicationRoute() {
         <Route path="students" element={<Student />} />
         <Route path="staffs" element={<Staffs />} />
         <Route path="blogs" element={<Blogs />} />
-        <Route path="add-course" element={<AddCourse />} />
       </Route>
     </Routes>
   );

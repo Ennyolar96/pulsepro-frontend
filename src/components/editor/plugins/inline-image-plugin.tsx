@@ -160,6 +160,7 @@ export function InsertInlineImageDialog({
         <Label htmlFor="caption">Show Caption</Label>
       </div>
       <Button
+        type="button"
         data-test-id="image-modal-file-upload-btn"
         disabled={isDisabled}
         onClick={() => handleOnClick()}

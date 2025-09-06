@@ -35,6 +35,7 @@ export function ImportExportPlugin() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button
+            type="button"
             variant={"ghost"}
             onClick={() =>
               exportFile(editor, {

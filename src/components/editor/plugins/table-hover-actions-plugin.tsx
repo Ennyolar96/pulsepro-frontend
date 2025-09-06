@@ -218,6 +218,7 @@ function TableHoverActionsContainer({
     <>
       {isShownRow && (
         <button
+          type="button"
           className={
             "EditorTheme__tableAddRows bg-accent hover:bg-accent/80 absolute flex w-[calc(100%-25px)] cursor-pointer items-center justify-center border-0"
           }
@@ -229,6 +230,7 @@ function TableHoverActionsContainer({
       )}
       {isShownColumn && (
         <button
+          type="button"
           className={
             "EditorTheme__tableAddColumns bg-accent hover:bg-accent/80 absolute flex w-[calc(100%-25px)] cursor-pointer items-center justify-center border-0"
           }

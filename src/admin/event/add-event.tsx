@@ -1,16 +1,17 @@
 import { Editor } from "@/components/blocks/editor-x/editor";
 import PrimaryButton from "@/components/ui/buttons";
-import { FileInput, FormInput } from "@/components/ui/form";
+import { FileInput, FormInput, FormSelect } from "@/components/ui/form";
 import { Form, Formik } from "formik";
 import { X } from "lucide-react";
 import { useState } from "react";
 import { IoMdCloudUpload } from "react-icons/io";
+import { eventSchema, initialValue } from "./validate";
 
 interface form {
   title: string;
 }
 
-export default function AddCourse() {
+export default function AddEvent() {
   const [description, setDescription] = useState<string>("");
   const [coverImage, setCoverImage] = useState<File | null>(null);
   const [dragActive, setDragActive] = useState<boolean>(true);
@@ -78,8 +79,8 @@ export default function AddCourse() {
   return (
     <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] p-10 rounded-[20px]">
       <Formik
-        initialValues={{ title: "" }}
-        // validationSchema={}
+        initialValues={initialValue}
+        validationSchema={eventSchema}
         onSubmit={(values) => {
           handleSubmitting(values);
         }}
@@ -87,9 +88,10 @@ export default function AddCourse() {
         {() => (
           <Form className="space-y-5">
             <FormInput
+              label="Event title"
               type="text"
               name="title"
-              placeholder="Enter Course title"
+              placeholder="Enter Event title"
             />
 
             <div>
@@ -161,17 +163,76 @@ export default function AddCourse() {
               />
             </div>
 
-            <Editor
-              className="h-66"
-              onHtmlChange={(html) => {
-                setDescription(html);
-              }}
-              classNames="bg-[#D9D9D9]"
+            <div>
+              <label
+                htmlFor="description"
+                className="text-base block mb-2 ms-3 text-[#2222222] font-semibold"
+              >
+                Event description
+              </label>
+              <Editor
+                className="h-66"
+                onHtmlChange={(html) => {
+                  setDescription(html);
+                }}
+                classNames="bg-[#D9D9D9]"
+              />
+            </div>
+
+            <FormInput
+              label="Starting Date and Time"
+              type="datetime-local"
+              name="starting_date"
             />
+
+            <FormInput
+              label="Ending Date and Time"
+              type="datetime-local"
+              name="ending_date"
+            />
+
+            <FormSelect
+              label="Event type"
+              name="eventType"
+              option={[
+                { value: "Physical", label: "Physical" },
+                { value: "Virtual", label: "Virtual" },
+              ]}
+            />
+
+            <FormInput
+              name="eventLink"
+              placeholder="Enter Event Link"
+              label="Event Link"
+              type="url"
+            />
+
+            <FormInput
+              name="eventAddress"
+              placeholder="Enter Event Address"
+              label="Event Address"
+              type="text"
+            />
+
+            <FormSelect
+              label="Event Status"
+              name="status"
+              option={[
+                { value: "draft", label: "Draft" },
+                { value: "schedule", label: "Schedule" },
+                { value: "published", label: "Published" },
+              ]}
+            />
+            <FormInput
+              name="schedule"
+              label="Schedule Date"
+              type="datetime-local"
+            />
+
             <PrimaryButton
               type="submit"
-              name="Create Course"
-              className="w-full"
+              name="Create Event"
+              className="w-full rounded-[10px]!"
             />
           </Form>
         )}

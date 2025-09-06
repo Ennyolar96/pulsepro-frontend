@@ -1,8 +1,8 @@
-import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext"
-import { CLEAR_EDITOR_COMMAND } from "lexical"
-import { Trash2Icon } from "lucide-react"
+import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
+import { CLEAR_EDITOR_COMMAND } from "lexical";
+import { Trash2Icon } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -12,22 +12,22 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 
 export function ClearEditorActionPlugin() {
-  const [editor] = useLexicalComposerContext()
+  const [editor] = useLexicalComposerContext();
 
   return (
     <Dialog>
       <Tooltip disableHoverableContent>
         <TooltipTrigger asChild>
           <DialogTrigger asChild>
-            <Button size={"sm"} variant={"ghost"} className="p-2">
+            <Button type="button" size={"sm"} variant={"ghost"} className="p-2">
               <Trash2Icon className="h-4 w-4" />
             </Button>
           </DialogTrigger>
@@ -44,14 +44,17 @@ export function ClearEditorActionPlugin() {
         </DialogHeader>
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button type="button" variant="outline">
+              Cancel
+            </Button>
           </DialogClose>
 
           <DialogClose asChild>
             <Button
+              type="button"
               variant="destructive"
               onClick={() => {
-                editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined)
+                editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined);
               }}
             >
               Clear
@@ -60,5 +63,5 @@ export function ClearEditorActionPlugin() {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

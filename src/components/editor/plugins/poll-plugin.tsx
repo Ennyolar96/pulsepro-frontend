@@ -47,7 +47,11 @@ export function InsertPollDialog({
         <Input onChange={(e) => setQuestion(e.target.value)} value={question} />
       </div>
       <DialogFooter>
-        <Button disabled={question.trim() === ""} onClick={onClick}>
+        <Button
+          type="button"
+          disabled={question.trim() === ""}
+          onClick={onClick}
+        >
           Confirm
         </Button>
       </DialogFooter>
