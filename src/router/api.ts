@@ -57,4 +57,4 @@ export function createAxiosInstance(baseURL?: string): AxiosInstance {
   return instance;
 }
 
-export const client = createAxiosInstance(import.meta.env.API_BASE_URL);
+export const http = createAxiosInstance(import.meta.env.VITE_API_BASE_URL);

@@ -5,9 +5,8 @@ import { Form, Formik } from "formik";
 import { X } from "lucide-react";
 import { useState } from "react";
 import { IoMdCloudUpload } from "react-icons/io";
-import { initialValue } from "../event/validate";
-import { careerSchema } from "../career/career-validate";
-import { client } from "@/router/api";
+import { http } from "@/router/api";
+import { blogSchema, initialValue } from "./validate";
 
 interface form {
   title: string;
@@ -22,7 +21,7 @@ export default function UploadNews() {
   const handleSubmitting = async (value: form) => {
     const data = { ...value, description: description, coverImage };
     console.log({ data });
-    const response = await client.post("/blog", data);
+    const response = await http.post("/blog", data);
     console.log({ response: response.data });
   };
 
@@ -84,7 +83,7 @@ export default function UploadNews() {
     <div className="bg-[#D8D8D833] border-4 border-[#D8D8D880] py-5 px-2 rounded-[20px]">
       <Formik
         initialValues={initialValue}
-        validationSchema={careerSchema}
+        validationSchema={blogSchema}
         onSubmit={(values) => {
           handleSubmitting(values);
         }}
