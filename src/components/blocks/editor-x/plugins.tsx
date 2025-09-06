@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   CHECK_LIST,
   ELEMENT_TRANSFORMERS,
@@ -19,16 +18,15 @@ import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPl
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { TabIndentationPlugin } from "@lexical/react/LexicalTabIndentationPlugin";
 import { TablePlugin } from "@lexical/react/LexicalTablePlugin";
+import { useState } from "react";
 
 import { ContentEditable } from "@/components/editor/editor-ui/content-editable";
 import { ActionsPlugin } from "@/components/editor/plugins/actions/actions-plugin";
-import { CharacterLimitPlugin } from "@/components/editor/plugins/actions/character-limit-plugin";
 import { ClearEditorActionPlugin } from "@/components/editor/plugins/actions/clear-editor-plugin";
 import { CounterCharacterPlugin } from "@/components/editor/plugins/actions/counter-character-plugin";
 import { EditModeTogglePlugin } from "@/components/editor/plugins/actions/edit-mode-toggle-plugin";
 import { ImportExportPlugin } from "@/components/editor/plugins/actions/import-export-plugin";
 import { MarkdownTogglePlugin } from "@/components/editor/plugins/actions/markdown-toggle-plugin";
-import { MaxLengthPlugin } from "@/components/editor/plugins/actions/max-length-plugin";
 import { ShareContentPlugin } from "@/components/editor/plugins/actions/share-content-plugin";
 import { SpeechToTextPlugin } from "@/components/editor/plugins/actions/speech-to-text-plugin";
 import { TreeViewPlugin } from "@/components/editor/plugins/actions/tree-view-plugin";
@@ -127,7 +125,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
 const placeholder = "Press / for commands...";
-const maxLength = 500;
+// const maxLength = 500;
 
 export function Plugins({ className }: { className?: string }) {
   const [floatingAnchorElem, setFloatingAnchorElem] =
@@ -312,10 +310,10 @@ export function Plugins({ className }: { className?: string }) {
       </div>
       <ActionsPlugin>
         <div className="clear-both flex items-center justify-between gap-2 overflow-auto border-t p-1">
-          <div className="flex flex-1 justify-start">
+          {/* <div className="flex flex-1 justify-start">
             <MaxLengthPlugin maxLength={maxLength} />
             <CharacterLimitPlugin maxLength={maxLength} charset="UTF-16" />
-          </div>
+          </div> */}
           <div>
             <CounterCharacterPlugin charset="UTF-16" />
           </div>
