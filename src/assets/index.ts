@@ -31,6 +31,7 @@ import CPR2 from "./images/cpr-2.jpg";
 import CPR3 from "./images/cpr-3.jpg";
 import colorLogo from "./images/color-logo.png";
 import whiteLogo from "./images/white-logo.png";
+import bigColoredLogo from "./images/coloredLogoBig.jpg";
 
 export {
   aslc,
@@ -65,5 +66,6 @@ export {
   CPR2,
   CPR3,
   colorLogo,
+  bigColoredLogo,
   whiteLogo,
 };

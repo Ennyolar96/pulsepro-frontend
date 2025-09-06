@@ -4,10 +4,11 @@ import { FaAngleRight, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import PrimaryButton from "../components/ui/buttons";
 import SubHeading from "../components/ui/sub-heading";
+import { bigColoredLogo } from "@/assets";
 
 export default function ContactUs() {
   const background: CSSProperties = {
-    // backgroundImage: `url(${ColoredLogoBackground})`,
+    backgroundImage: `url(${bigColoredLogo})`,
   };
 
   const contact = [

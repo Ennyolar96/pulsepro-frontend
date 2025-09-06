@@ -76,14 +76,14 @@ export default function AboutUs() {
           </p>
           <p className="text-base font-medium leading-8 text-justify">
             From Basic Life Support (BLS) and Advanced Cardiovascular Life
-            Support (ACLS) to Clinical Skills, PulsePro Nigeria prepares
+            Support (ACLS) to Clinical Skills, ResusPro Nigeria prepares
             professionals to lead and respond effectively in critical
             situations.
           </p>
 
           <p className="text-base font-medium leading-8 text-justify">
             Whether you're looking to upskill, begin your journey in the field
-            of healthcare, or partner for healthcare improvement, PulsePro
+            of healthcare, or partner for healthcare improvement, ResusPro
             Nigeria is your trusted partner in quality training and
             patient-focused care delivery.
           </p>

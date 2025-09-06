@@ -7,6 +7,7 @@ import { useState } from "react";
 import { IoMdCloudUpload } from "react-icons/io";
 import { initialValue } from "../event/validate";
 import { careerSchema } from "../career/career-validate";
+import { client } from "@/router/api";
 
 interface form {
   title: string;
@@ -18,9 +19,11 @@ export default function UploadNews() {
   const [dragActive, setDragActive] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmitting = (value: form) => {
+  const handleSubmitting = async (value: form) => {
     const data = { ...value, description: description, coverImage };
-    console.log(data);
+    console.log({ data });
+    const response = await client.post("/blog", data);
+    console.log({ response: response.data });
   };
 
   const validateLogo = async (file: File): Promise<string | null> => {

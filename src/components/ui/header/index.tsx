@@ -92,7 +92,7 @@ export default function Navigation({
           <div className={isHome ? "block" : "hidden"}></div>
           <img
             src={colorLogo}
-            alt="PulsePro Nigeria"
+            alt="ResusPro Nigeria"
             loading="lazy"
             width={isTablet ? 140 : 121}
             height={33.4}
@@ -118,7 +118,7 @@ export default function Navigation({
     <div className={cn(className, "flex justify-between py-10 items-center")}>
       <img
         src={isHome ? whiteLogo : colorLogo}
-        alt="PulsePro Nigeria"
+        alt="ResusPro Nigeria"
         loading="lazy"
       />
       <div className="space-x-10">
