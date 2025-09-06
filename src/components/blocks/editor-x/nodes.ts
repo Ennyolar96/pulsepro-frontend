@@ -23,7 +23,6 @@ import { TweetNode } from "@/components/editor/nodes/embeds/tweet-node";
 import { YouTubeNode } from "@/components/editor/nodes/embeds/youtube-node";
 import { EmojiNode } from "@/components/editor/nodes/emoji-node";
 import { EquationNode } from "@/components/editor/nodes/equation-node";
-import { ExcalidrawNode } from "@/components/editor/nodes/excalidraw-node";
 import { ImageNode } from "@/components/editor/nodes/image-node";
 import { InlineImageNode } from "@/components/editor/nodes/inline-image-node";
 import { KeywordNode } from "@/components/editor/nodes/keyword-node";
@@ -56,7 +55,6 @@ export const nodes: ReadonlyArray<Klass<LexicalNode> | LexicalNodeReplacement> =
     InlineImageNode,
     EmojiNode,
     KeywordNode,
-    ExcalidrawNode,
     PollNode,
     LayoutContainerNode,
     LayoutItemNode,
