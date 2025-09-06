@@ -7,6 +7,8 @@ import { useState } from "react";
 import { IoMdCloudUpload } from "react-icons/io";
 import { http } from "@/router/api";
 import { blogSchema, initialValue } from "./validate";
+import { jsonToFormData } from "@/components/utils";
+import { AxiosError } from "axios";
 
 interface form {
   title: string;
@@ -19,10 +21,26 @@ export default function UploadNews() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmitting = async (value: form) => {
-    const data = { ...value, description: description, coverImage };
-    console.log({ data });
-    const response = await http.post("/blog", data);
-    console.log({ response: response.data });
+    try {
+      const payload = { ...value, description, coverImage };
+      const fd = jsonToFormData(payload);
+      const { data } = await http.post("/blog", fd, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      console.log({ data });
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        const theError = error.response?.data;
+        if ("errors" in theError) {
+          theError.errors.map((item: { messages: string[] }) => {
+            item.messages.forEach((error) => console.log(error));
+          });
+        }
+      }
+      if (error instanceof Error) {
+        console.log(error.message);
+      }
+    }
   };
 
   const validateLogo = async (file: File): Promise<string | null> => {
@@ -193,7 +211,7 @@ export default function UploadNews() {
             />
 
             <FormInput
-              name="schedule"
+              name="scheduleDate"
               label="Schedule Date"
               type="datetime-local"
             />
